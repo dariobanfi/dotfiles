@@ -1,0 +1,32 @@
+{
+    "always_show_minimap_viewport": true,
+    "color_scheme": "Packages/Theme - Spacegray/base16-ocean.dark.tmTheme",
+    "enable_tab_scrolling": false,
+    "fade_fold_buttons": false,
+    "find_selected_text": true,
+    "font_face": "Dejavu Sans Mono",
+    "font_options":
+    [
+        "subpixel_antialias"
+    ],
+    "font_size": 8,
+    "highlight_line": true,
+    "highlight_modified_tabs": true,
+    "ignored_packages":
+    [
+        "Package Control",
+        "Vintage"
+    ],
+    "rulers":
+    [
+        80
+    ],
+    "show_encoding": true,
+    "spacegray_tabs_font_small": true,
+    "theme": "Spacegray.sublime-theme",
+    "translate_tabs_to_spaces": true,
+    "trim_automatic_white_space": true,
+    "trim_trailing_white_space_on_save": true,
+    "update_check": false,
+    "word_wrap": true
+}
