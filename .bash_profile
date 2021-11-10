@@ -46,3 +46,7 @@ complete -W "NSGlobalDomain" defaults;
 
 # Add `killall` tab completion for common apps
 complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes SystemUIServer Terminal Twitter" killall;
+
+alias pbclean="pbpaste | pbcopy"
+alias flushdnscache="sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder;echo Done!"
+alias externalip="dig +short myip.opendns.com @resolver1.opendns.com"
