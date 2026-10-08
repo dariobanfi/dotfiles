@@ -1,0 +1,59 @@
+[language-server.ruff]
+command = "ruff"
+args = ["server"]
+
+[[language]]
+name = "python"
+# Ruff for lint diagnostics + quick fixes, ty for type checking, hover,
+# go-to-definition and completion.
+language-servers = ["ruff", "ty"]
+# Sort imports, then format. On a syntax error ruff exits non-zero and
+# Helix leaves the buffer untouched.
+formatter = { command = "sh", args = ["-c", "ruff check --select I --fix --quiet --exit-zero - | ruff format -"] }
+auto-format = true
+indent = { tab-width = 4, unit = "    " }
+rulers = [88]
+
+# --- JavaScript / TypeScript ---
+# typescript-language-server: types, completion, go-to-definition. Uses the
+# project's own TypeScript; falls back to TS 6 (Homebrew's TS 7 has no tsserver).
+# Biome: lint diagnostics. biome-format.sh: organize imports + format on save.
+
+[language-server.typescript-language-server]
+config = { tsserver = { fallbackPath = "/Users/dariobanfi/.local/share/typescript6/node_modules/typescript/lib" } }
+
+[language-server.biome]
+command = "/opt/homebrew/bin/biome"
+args = ["lsp-proxy"]
+
+[[language]]
+name = "javascript"
+language-servers = ["typescript-language-server", "biome"]
+formatter = { command = "/Users/dariobanfi/.config/helix/biome-format.sh", args = ["x.js"] }
+auto-format = true
+indent = { tab-width = 2, unit = "  " }
+rulers = [80]
+
+[[language]]
+name = "jsx"
+language-servers = ["typescript-language-server", "biome"]
+formatter = { command = "/Users/dariobanfi/.config/helix/biome-format.sh", args = ["x.jsx"] }
+auto-format = true
+indent = { tab-width = 2, unit = "  " }
+rulers = [80]
+
+[[language]]
+name = "typescript"
+language-servers = ["typescript-language-server", "biome"]
+formatter = { command = "/Users/dariobanfi/.config/helix/biome-format.sh", args = ["x.ts"] }
+auto-format = true
+indent = { tab-width = 2, unit = "  " }
+rulers = [80]
+
+[[language]]
+name = "tsx"
+language-servers = ["typescript-language-server", "biome"]
+formatter = { command = "/Users/dariobanfi/.config/helix/biome-format.sh", args = ["x.tsx"] }
+auto-format = true
+indent = { tab-width = 2, unit = "  " }
+rulers = [80]

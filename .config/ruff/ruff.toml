@@ -1,0 +1,16 @@
+# User-level fallback: only used when a project has no pyproject.toml /
+# ruff.toml of its own.
+line-length = 88
+target-version = "py313"
+
+[lint]
+select = [
+    "E4", "E7", "E9", "F", # ruff defaults (pyflakes + core pycodestyle)
+    "I",                   # isort
+    "B",                   # bugbear: likely bugs
+    "UP",                  # pyupgrade: modern syntax
+    "SIM",                 # simplifications
+]
+
+[format]
+docstring-code-format = true

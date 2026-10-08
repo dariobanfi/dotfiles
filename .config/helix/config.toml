@@ -1,0 +1,17 @@
+theme = "catppuccin_mocha_subtle"
+
+[editor.soft-wrap]
+enable = true
+
+[editor.file-picker]
+hidden = false
+
+[editor.whitespace.render]
+space = "all"
+tab = "all"
+newline = "none"
+
+[editor.whitespace.characters]
+space = "⋅"
+tab = "›"
+tabpad = " "
