@@ -1,0 +1,5 @@
+inherits = "catppuccin_mocha_subtle"
+
+# Let the terminal background show through
+"ui.background" = {}
+"ui.gutter" = {}

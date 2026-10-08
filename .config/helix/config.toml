@@ -1,4 +1,6 @@
-theme = "catppuccin_mocha_subtle"
+# themes/local.toml is per machine and not committed; install.sh creates it
+# (transparent on Linux, solid on macOS).
+theme = "local"
 
 [editor.soft-wrap]
 enable = true

@@ -17,19 +17,21 @@ rulers = [88]
 # --- JavaScript / TypeScript ---
 # typescript-language-server: types, completion, go-to-definition. Uses the
 # project's own TypeScript; falls back to TS 6 (Homebrew's TS 7 has no tsserver).
+# On Linux the fallback path does not exist and is ignored; the server then
+# finds the npm-installed TS 6 next to itself in ~/.local/lib/node_modules.
 # Biome: lint diagnostics. biome-format.sh: organize imports + format on save.
 
 [language-server.typescript-language-server]
 config = { tsserver = { fallbackPath = "/Users/dariobanfi/.local/share/typescript6/node_modules/typescript/lib" } }
 
 [language-server.biome]
-command = "/opt/homebrew/bin/biome"
-args = ["lsp-proxy"]
+command = "sh"
+args = ["-c", "exec \"$HOME/.config/helix/biome.sh\" lsp-proxy"]
 
 [[language]]
 name = "javascript"
 language-servers = ["typescript-language-server", "biome"]
-formatter = { command = "/Users/dariobanfi/.config/helix/biome-format.sh", args = ["x.js"] }
+formatter = { command = "sh", args = ["-c", "exec \"$HOME/.config/helix/biome-format.sh\" x.js"] }
 auto-format = true
 indent = { tab-width = 2, unit = "  " }
 rulers = [80]
@@ -37,7 +39,7 @@ rulers = [80]
 [[language]]
 name = "jsx"
 language-servers = ["typescript-language-server", "biome"]
-formatter = { command = "/Users/dariobanfi/.config/helix/biome-format.sh", args = ["x.jsx"] }
+formatter = { command = "sh", args = ["-c", "exec \"$HOME/.config/helix/biome-format.sh\" x.jsx"] }
 auto-format = true
 indent = { tab-width = 2, unit = "  " }
 rulers = [80]
@@ -45,7 +47,7 @@ rulers = [80]
 [[language]]
 name = "typescript"
 language-servers = ["typescript-language-server", "biome"]
-formatter = { command = "/Users/dariobanfi/.config/helix/biome-format.sh", args = ["x.ts"] }
+formatter = { command = "sh", args = ["-c", "exec \"$HOME/.config/helix/biome-format.sh\" x.ts"] }
 auto-format = true
 indent = { tab-width = 2, unit = "  " }
 rulers = [80]
@@ -53,7 +55,7 @@ rulers = [80]
 [[language]]
 name = "tsx"
 language-servers = ["typescript-language-server", "biome"]
-formatter = { command = "/Users/dariobanfi/.config/helix/biome-format.sh", args = ["x.tsx"] }
+formatter = { command = "sh", args = ["-c", "exec \"$HOME/.config/helix/biome-format.sh\" x.tsx"] }
 auto-format = true
 indent = { tab-width = 2, unit = "  " }
 rulers = [80]
