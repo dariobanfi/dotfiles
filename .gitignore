@@ -1,1 +1,2 @@
 .config/helix/themes/local.toml
+.config/kitty/*.bak-*

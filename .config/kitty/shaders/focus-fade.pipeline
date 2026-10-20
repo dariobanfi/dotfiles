@@ -1,0 +1,18 @@
+# Tune the look here; see focus-fade.slang for what each value means.
+var float INACTIVE_KEEP = 0.5
+
+# Always on: dim the unfocused splits. Redraws only when something changes.
+startgroup
+    animation_step 0
+    shaders focus-fade
+endgroup
+
+# On focus change: fade the newly focused split up from the dimmed look.
+startgroup
+    animation_start window-focus-in
+    animation_stop 220
+    animation_curve ease-out
+    animation_step 16
+    var bool FADE_IN = true
+    shaders focus-fade
+endgroup

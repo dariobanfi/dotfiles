@@ -23,6 +23,7 @@ link() {
 }
 
 link .config/helix
+link .config/kitty
 
 # Per-machine Helix theme (git-ignored). Edit it by hand to override.
 theme="$repo/.config/helix/themes/local.toml"

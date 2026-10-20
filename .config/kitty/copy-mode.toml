@@ -1,0 +1,22 @@
+# Helix config used only by kitty's copy mode (copy-mode.sh)
+theme = "catppuccin_mocha_subtle"
+
+[editor]
+gutters = []
+
+[editor.soft-wrap]
+enable = true
+
+[editor.statusline]
+left = ["mode"]
+center = []
+right = ["selections", "position"]
+
+# y copies the selection to the clipboard and closes, q closes without copying
+[keys.normal]
+y = ["yank_to_clipboard", ":quit!"]
+q = ":quit!"
+
+[keys.select]
+y = ["yank_to_clipboard", ":quit!"]
+q = ":quit!"
