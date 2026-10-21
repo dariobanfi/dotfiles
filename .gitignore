@@ -1,2 +1,6 @@
 .config/helix/themes/local.toml
 .config/kitty/*.bak-*
+# kitty sessions are per machine (hosts, local paths)
+*.kitty-session
+*.kitty_session
+.config/kitty/sessions/
