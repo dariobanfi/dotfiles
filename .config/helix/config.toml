@@ -17,3 +17,18 @@ newline = "none"
 space = "⋅"
 tab = "›"
 tabpad = " "
+
+# Space-o: browse with Yazi from the current file's folder and open the file picked there.
+# Space-e stays the built-in explorer. Needs yazi.
+# The file name goes to yazi-picker.sh as quoted input and "exec" drops anything after it, so
+# a hostile file name can't run commands. The last three lines repaint Helix afterwards.
+[keys.normal.space]
+o = [
+  ''':open %sh{exec "$HOME/.config/helix/yazi-picker.sh" <<'NAME'
+%{buffer_name}
+NAME
+}''',
+  ':redraw',
+  ':set mouse false',
+  ':set mouse true',
+]
