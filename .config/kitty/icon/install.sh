@@ -49,6 +49,13 @@ if [ ! -d "$backup" ]; then
   ditto "$app" "$backup"
 fi
 
+# kitty's files can be read-only or owned by another user. Make them writable first.
+if [ ! -w "$res/Assets.car" ] || [ ! -w "$res/kitty.icns" ] || [ ! -w "$res" ]; then
+  echo "kitty.app is not writable, so macOS will ask for your password."
+  sudo chown -R "$(id -un)" "$app"
+  chmod -R u+w "$app"
+fi
+
 cp "$tmp/Assets.car" "$res/Assets.car"
 cp "$here/kitty.icns" "$res/kitty.icns"
 
