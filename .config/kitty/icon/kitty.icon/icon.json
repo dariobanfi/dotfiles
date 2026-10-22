@@ -3,8 +3,8 @@
     {
       "value": {
         "linear-gradient": [
-          "srgb:1.00000,0.90588,0.78039,1.00000",
-          "srgb:0.96863,0.69804,0.47843,1.00000"
+          "srgb:0.26275,0.27451,0.30980,1.00000",
+          "srgb:0.12157,0.12941,0.15294,1.00000"
         ],
         "orientation": {
           "start": {
@@ -22,8 +22,8 @@
       "appearance": "dark",
       "value": {
         "linear-gradient": [
-          "srgb:0.18039,0.14902,0.13333,1.00000",
-          "srgb:0.05490,0.04314,0.03922,1.00000"
+          "srgb:0.14902,0.15294,0.17255,1.00000",
+          "srgb:0.04314,0.04314,0.05098,1.00000"
         ],
         "orientation": {
           "start": {
@@ -56,7 +56,14 @@
               "value": "front-dark.svg"
             }
           ],
-          "name": "front"
+          "name": "front",
+          "position": {
+            "scale": 1.12,
+            "translation-in-points": [
+              0,
+              0
+            ]
+          }
         }
       ],
       "lighting": "individual",
@@ -84,7 +91,14 @@
               "value": "pane-dark.svg"
             }
           ],
-          "name": "pane"
+          "name": "pane",
+          "position": {
+            "scale": 1.12,
+            "translation-in-points": [
+              0,
+              0
+            ]
+          }
         }
       ],
       "lighting": "individual",
@@ -112,7 +126,14 @@
               "value": "cat-dark.svg"
             }
           ],
-          "name": "cat"
+          "name": "cat",
+          "position": {
+            "scale": 1.12,
+            "translation-in-points": [
+              0,
+              0
+            ]
+          }
         }
       ],
       "lighting": "individual",
